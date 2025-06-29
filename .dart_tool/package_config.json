@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "async",
-      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.13.0",
+      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.12.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -39,13 +39,13 @@
     },
     {
       "name": "fake_async",
-      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.3",
+      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "flutter",
-      "rootUri": "file:///C:/flutter/packages/flutter",
+      "rootUri": "file:///C:/Users/The%20Tourers/Downloads/flutter_windows_3.29.1-stable/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -57,19 +57,19 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///C:/flutter/packages/flutter_test",
+      "rootUri": "file:///C:/Users/The%20Tourers/Downloads/flutter_windows_3.29.1-stable/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///C:/flutter/packages/flutter_web_plugins",
+      "rootUri": "file:///C:/Users/The%20Tourers/Downloads/flutter_windows_3.29.1-stable/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "leak_tracker",
-      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.9",
+      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.8",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -123,7 +123,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///C:/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///C:/Users/The%20Tourers/Downloads/flutter_windows_3.29.1-stable/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -219,7 +219,7 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-15.0.0",
+      "rootUri": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-14.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -236,9 +236,10 @@
       "languageVersion": "3.0"
     }
   ],
+  "generated": "2025-06-29T16:28:13.684125Z",
   "generator": "pub",
-  "generatorVersion": "3.8.1",
-  "flutterRoot": "file:///C:/flutter",
-  "flutterVersion": "3.32.1",
+  "generatorVersion": "3.7.0",
+  "flutterRoot": "file:///C:/Users/The%20Tourers/Downloads/flutter_windows_3.29.1-stable/flutter",
+  "flutterVersion": "3.29.1",
   "pubCache": "file:///C:/Users/The%20Tourers/AppData/Local/Pub/Cache"
 }
