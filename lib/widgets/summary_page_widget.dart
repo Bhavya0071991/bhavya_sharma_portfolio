@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main.dart';
 
 class SummaryPageWidget extends StatelessWidget {
   const SummaryPageWidget({super.key});

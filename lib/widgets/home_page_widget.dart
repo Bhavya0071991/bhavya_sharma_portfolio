@@ -14,8 +14,8 @@ class HomePageWidget extends StatelessWidget {
        // Background Image with Fade Effect
        Positioned.fill(
          child: FadeInImage.assetNetwork(
-           placeholder: 'assets/png_bhavya.png',
-           image: 'assets/png_bhavya.png',
+           placeholder: 'assets/assets/png_bhavya.png',
+           image: 'assets/assets/png_bhavya.png',
            fit: BoxFit.contain,
            fadeInDuration: const Duration(seconds: 2),
          ),

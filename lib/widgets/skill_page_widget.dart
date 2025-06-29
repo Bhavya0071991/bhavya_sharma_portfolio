@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main.dart';
 
 class SkillPageWidget extends StatelessWidget {
   const SkillPageWidget({super.key});

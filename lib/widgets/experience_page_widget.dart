@@ -382,7 +382,7 @@ class ExperiencePageWidget extends StatelessWidget {
 
   Widget _buildProjectCard(String title, String description, String imagePath) {
     return Padding(
-      padding: EdgeInsets.only(left: 0.0, right: 0.0, top: 8.0, bottom: 16.0),
+      padding: const EdgeInsets.only(left: 0.0, right: 0.0, top: 8.0, bottom: 16.0),
       child: Container(
         width: 245,
         height: 260,

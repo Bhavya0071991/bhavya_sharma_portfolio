@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main.dart';
 
 class HobbiesPageWidget extends StatelessWidget {
   const HobbiesPageWidget({super.key});

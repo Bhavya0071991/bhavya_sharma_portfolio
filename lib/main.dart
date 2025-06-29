@@ -5,9 +5,12 @@ import 'package:bhavya_sharma_portfolio/widgets/skill_page_widget.dart';
 import 'package:bhavya_sharma_portfolio/widgets/summary_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'force_bundle.dart';
+
 
 
 void main() {
+  print(forceBundle.length);
   runApp(const PortfolioApp());
 }
 
