@@ -16,7 +16,6 @@ class HomePageWidget extends StatelessWidget {
          child: Image.asset(
            'assets/png_bhavya.png',
            fit: BoxFit.contain,
-
          ),
        ),
        // Content
