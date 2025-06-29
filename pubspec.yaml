@@ -1,0 +1,30 @@
+name: bhavya_sharma_portfolio
+description: A portfolio website showcasing Bhavya Sharma's work and experience.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  url_launcher: ^6.1.11
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/
+
+  fonts:
+    - family: AlbertSans
+      fonts:
+        - asset: assets/fonts/AlbertSans-Bold.ttf
+          weight: 700 
