@@ -13,11 +13,10 @@ class HomePageWidget extends StatelessWidget {
      children: [
        // Background Image with Fade Effect
        Positioned.fill(
-         child: FadeInImage.assetNetwork(
-           placeholder: 'assets/assets/png_bhavya.png',
-           image: 'assets/assets/png_bhavya.png',
+         child: Image.asset(
+           'assets/png_bhavya.png',
            fit: BoxFit.contain,
-           fadeInDuration: const Duration(seconds: 2),
+
          ),
        ),
        // Content
