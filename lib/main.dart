@@ -130,145 +130,154 @@ class _PortfolioHomeState extends State<PortfolioHome>
             ),
           ),
 
-          Column(
-            children: [
-              // Navigation bar
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 50.0,
-                  bottom: 50.0,
-                  left: 110.0,
-                  right: 110.0,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
+          LayoutBuilder(
+            builder: (context, constraints) {
+              double maxWidth = constraints.maxWidth;
+              bool isMobile = maxWidth < 600;
+              bool isTablet = maxWidth >= 600 && maxWidth < 1024;
+              bool isWeb = maxWidth >= 1024;
+
+              return Column(
+                children: [
+                  // Navigation bar
+                  Padding(
+                    padding:  EdgeInsets.only(
+                      top:isMobile?25.0: 50.0,
+                      bottom: isMobile?25.0: 50.0,
+                      left: isMobile? 50: 110.0,
+                      right: isMobile? 50:110.0,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        AnimatedBuilder(
-                          animation: _animationController,
-                          builder: (context, child) {
-                            return Opacity(
-                              opacity: _animationController.value,
-                              child: child,
-                            );
+                        Row(
+                          children: [
+                            AnimatedBuilder(
+                              animation: _animationController,
+                              builder: (context, child) {
+                                return Opacity(
+                                  opacity: _animationController.value,
+                                  child: child,
+                                );
+                              },
+                              child: Container(
+                                width: 8,
+                                height: 8,
+                                decoration: const BoxDecoration(
+                                  color: Colors.green,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            const Text(
+                              'Open to work',
+                              style: TextStyle(fontSize: 14, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        ElevatedButton(
+                          onPressed: () async {
+                            launchCV();
                           },
-                          child: Container(
-                            width: 8,
-                            height: 8,
-                            decoration: const BoxDecoration(
-                              color: Colors.green,
-                              shape: BoxShape.circle,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.amber,
+                          ),
+                          child: const Text(
+                            'Download CV',
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontFamily: 'AlbertSans',
                             ),
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        const Text(
-                          'Open to work',
-                          style: TextStyle(fontSize: 14, color: Colors.white),
-                        ),
                       ],
                     ),
-                    ElevatedButton(
-                      onPressed: () async {
-                        launchCV();
+                  ),
+                  // PageView for scrollable sections
+                  Expanded(
+                    child: PageView.builder(
+                      controller: _pageController,
+                      scrollDirection: Axis.vertical,
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        switch (index) {
+                          case 0:
+                            return const HomePageWidget();
+                          case 1:
+                            return const SummaryPageWidget();
+                          case 2:
+                            return const ExperiencePageWidget();
+                          case 3:
+                            return const SkillPageWidget();
+                          case 4:
+                            return const HobbiesPageWidget();
+                          default:
+                            return Container();
+                        }
                       },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.amber,
-                      ),
-                      child: const Text(
-                        'Download CV',
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontFamily: 'AlbertSans',
-                        ),
-                      ),
                     ),
-                  ],
-                ),
-              ),
-              // PageView for scrollable sections
-              Expanded(
-                child: PageView.builder(
-                  controller: _pageController,
-                  scrollDirection: Axis.vertical,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    switch (index) {
-                      case 0:
-                        return const HomePageWidget();
-                      case 1:
-                        return const SummaryPageWidget();
-                      case 2:
-                        return const ExperiencePageWidget();
-                      case 3:
-                        return const SkillPageWidget();
-                      case 4:
-                        return const HobbiesPageWidget();
-                      default:
-                        return Container();
-                    }
-                  },
-                ),
-              ),
-              // Bottom navigation
-              Container(
-                height: 50,
-                margin: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(45),
-                ),
-                child: LayoutBuilder(
-                      builder: (context, constraints) {
-                        double maxWidth = constraints.maxWidth;
-                        bool isMobile = maxWidth < 600;
-                        bool isTablet = maxWidth >= 600 && maxWidth < 1024;
-                        bool isWeb = maxWidth >= 1024;
+                  ),
+                  // Bottom navigation
+                  Container(
+                    height: 50,
+                    margin: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(45),
+                    ),
+                    child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          double maxWidth = constraints.maxWidth;
+                          bool isMobile = maxWidth < 600;
+                          bool isTablet = maxWidth >= 600 && maxWidth < 1024;
+                          bool isWeb = maxWidth >= 1024;
 
-                        double buttonSpacing = isMobile ? 8 : 16;
-                        double iconSize = isMobile ? 20 : 24;
-                        double fontSize = isMobile ? 10 : 14;
+                          double buttonSpacing = isMobile ? 8 : 16;
+                          double iconSize = isMobile ? 20 : 24;
+                          double fontSize = isMobile ? 10 : 14;
 
-                        return Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _buildNavButton(
-                              Icons.person_outline,
-                              (isMobile) ? '' : 'Home',
-                              _currentPage == 0,
-                              0,
-                            ),
-                            _buildNavButton(
-                              Icons.description_outlined,
-                              (isMobile) ? '' : 'Summary',
-                              _currentPage == 1,
-                              1,
-                            ),
-                            _buildNavButton(
-                              Icons.work_outline,
-                              (isMobile) ? '' : 'Experience',
-                              _currentPage == 2,
-                              2,
-                            ),
-                            _buildNavButton(
-                              Icons.psychology_outlined,
-                              (isMobile) ? '' : 'Skills',
-                              _currentPage == 3,
-                              3,
-                            ),
-                            _buildNavButton(Icons.link,
-                                (isMobile) ? '' : 'Hobbies', _currentPage == 4,
-                                4),
-                          ],
-                        );
-                      }
-                ),
-              ),
-            ],
+                          return Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              _buildNavButton(
+                                Icons.person_outline,
+                                (isMobile) ? '' : 'Home',
+                                _currentPage == 0,
+                                0,
+                              ),
+                              _buildNavButton(
+                                Icons.description_outlined,
+                                (isMobile) ? '' : 'Summary',
+                                _currentPage == 1,
+                                1,
+                              ),
+                              _buildNavButton(
+                                Icons.work_outline,
+                                (isMobile) ? '' : 'Experience',
+                                _currentPage == 2,
+                                2,
+                              ),
+                              _buildNavButton(
+                                Icons.psychology_outlined,
+                                (isMobile) ? '' : 'Skills',
+                                _currentPage == 3,
+                                3,
+                              ),
+                              _buildNavButton(Icons.link,
+                                  (isMobile) ? '' : 'Hobbies', _currentPage == 4,
+                                  4),
+                            ],
+                          );
+                        }
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),
