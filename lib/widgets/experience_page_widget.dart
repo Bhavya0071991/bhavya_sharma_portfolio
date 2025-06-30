@@ -120,38 +120,36 @@ class ExperiencePageWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 // Project Grid
-                isMobile ? SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      _buildProjectCard(
-                        isMobile,
-                        'Breath & Heart',
-                        'This app is developer in native android. This app is to meditate and to improve your health',
-                        'assets/breathnheart.png',
-                      ),
+                isMobile ? Column(
+                  children: [
+                    _buildProjectCard(
+                      isMobile,
+                      'Breath & Heart',
+                      'This app is developer in native android. This app is to meditate and to improve your health',
+                      'assets/breathnheart.png',
+                    ),
 
-                      _buildProjectCard(
-                        isMobile,
-                        'HHA 365',
-                        'This app is developed in flutter, uses to manage caregivers and patients',
-                        'assets/hha.png',
-                      ),
+                    _buildProjectCard(
+                      isMobile,
+                      'HHA 365',
+                      'This app is developed in flutter, uses to manage caregivers and patients',
+                      'assets/hha.png',
+                    ),
 
-                      _buildProjectCard(
-                        isMobile,
-                        'NP 168',
-                        'NP168 is designed to empower network providers in the home health care industry.',
-                        'assets/np168.png',
-                      ),
+                    _buildProjectCard(
+                      isMobile,
+                      'NP 168',
+                      'NP168 is designed to empower network providers in the home health care industry.',
+                      'assets/np168.png',
+                    ),
 
-                      _buildProjectCard(
-                        isMobile,
-                        'Prodriver & Prodrive',
-                        'This app is developer in flutter and uses to manage drivers and vehicles.',
-                        'assets/prodriver.png',
-                      ),
-                    ],
-                  ),
+                    _buildProjectCard(
+                      isMobile,
+                      'Prodriver & Prodrive',
+                      'This app is developer in flutter and uses to manage drivers and vehicles.',
+                      'assets/prodriver.png',
+                    ),
+                  ],
                 )
                     : Row(
                   children: [
@@ -193,31 +191,29 @@ class ExperiencePageWidget extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 24),
-                isMobile ?  SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      _buildProjectCard(
-                        isMobile,
-                        'Whel App',
-                        'This app is developed in flutter and uses to manage to connect patients with doctors',
-                        'assets/whelapp.png',
-                      ),
-                      const SizedBox(width: 16),
-                      _buildProjectCard(
-                        isMobile,
-                        'Clock-In',
-                        'This app is developed in flutter and this app is used to clock in and out of drivers.',
-                        'assets/clockin.png',
-                      ),
-                      const SizedBox(width: 16),
-                      _buildProjectCard(
-                        isMobile,
-                        'Shopnet',
-                        'This app is developed in flutter and it provide domain suggestions for your business',
-                        'assets/shopnet.png',
-                      ),
-                    ],
-                  ),
+                isMobile ?  Column(
+                  children: [
+                    _buildProjectCard(
+                      isMobile,
+                      'Whel App',
+                      'This app is developed in flutter and uses to manage to connect patients with doctors',
+                      'assets/whelapp.png',
+                    ),
+                    const SizedBox(width: 16),
+                    _buildProjectCard(
+                      isMobile,
+                      'Clock-In',
+                      'This app is developed in flutter and this app is used to clock in and out of drivers.',
+                      'assets/clockin.png',
+                    ),
+                    const SizedBox(width: 16),
+                    _buildProjectCard(
+                      isMobile,
+                      'Shopnet',
+                      'This app is developed in flutter and it provide domain suggestions for your business',
+                      'assets/shopnet.png',
+                    ),
+                  ],
                 ):
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -324,24 +320,22 @@ class ExperiencePageWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 // Project Grid
-                isMobile ? SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      _buildProjectCard(
-                        isMobile,
-                        'Temple Bliss',
-                        'This app is developed in Android Native (Kotlin) and This app gives the most accurate psychic readings from real psychics LIVE on TempleBliss',
-                        'assets/templebliss.png',
-                      ),
-                      const SizedBox(width: 16),
-                      _buildProjectCard(
-                        isMobile,
-                        'Traceability',
-                        'This app is developed in in Android Native (Kotlin), This app is a Data management app for tracking and storing harvest product information.',
-                        'assets/traceability.png',
-                      ),
-                    ],
-                  ),
+                isMobile ? Column(
+                  children: [
+                    _buildProjectCard(
+                      isMobile,
+                      'Temple Bliss',
+                      'This app is developed in Android Native (Kotlin) and This app gives the most accurate psychic readings from real psychics LIVE on TempleBliss',
+                      'assets/templebliss.png',
+                    ),
+                    const SizedBox(width: 16),
+                    _buildProjectCard(
+                      isMobile,
+                      'Traceability',
+                      'This app is developed in in Android Native (Kotlin), This app is a Data management app for tracking and storing harvest product information.',
+                      'assets/traceability.png',
+                    ),
+                  ],
                 ):
                 Row(
                   children: [
