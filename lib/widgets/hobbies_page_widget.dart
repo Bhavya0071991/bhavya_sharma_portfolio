@@ -13,39 +13,49 @@ class HobbiesPageWidget extends StatelessWidget {
         top: 15.0,
         bottom: 32.0,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Hobbies',
-            style: TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
-              color: Colors.amber,
-            ),
-          ),
-          const SizedBox(height: 48),
-          const SizedBox(height: 24),
-          Wrap(
-            spacing: 16,
-            runSpacing: 16,
-            children: [
-              _buildInterestChip('Hiking & V-logging'),
-              _buildInterestChip('Video Editing'),
-              _buildInterestChip('Singing & Playing Guitar'),
-              _buildInterestChip('Coding in Pressure-Free Environments'),
-              _buildInterestChip('Bike Riding'),
-            ],
-          ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          double maxWidth = constraints.maxWidth;
+          bool isMobile = maxWidth < 600;
+          bool isTablet = maxWidth >= 600 && maxWidth < 1024;
+          bool isWeb = maxWidth >= 1024;
 
-          // Contact Information
-          const Spacer(),
-          // Footer
-          const Text(
-            '© 2025 Portfolio by Bhavya Sharma',
-            style: TextStyle(color: Colors.white54, fontSize: 14),
-          ),
-        ],
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hobbies',
+                style: TextStyle(
+                  fontSize: isMobile ? 28 : 48,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.amber,
+                ),
+              ),
+              const SizedBox(height: 48),
+              const SizedBox(height: 24),
+              Wrap(
+                spacing: 16,
+                runSpacing: 16,
+                children: [
+                  _buildInterestChip('Hiking & V-logging'),
+                  _buildInterestChip('Video Editing'),
+                  _buildInterestChip('Singing & Playing Guitar'),
+                  _buildInterestChip('Coding in Pressure-Free Environments'),
+                  _buildInterestChip('Bike Riding'),
+                ],
+              ),
+
+              // Contact Information
+              const Spacer(),
+              // Footer
+              const Text(
+                '© 2025 Portfolio by Bhavya Sharma',
+                style: TextStyle(color: Colors.white54, fontSize: 14),
+              ),
+            ],
+          );
+        },
+
       ),
     );
   }

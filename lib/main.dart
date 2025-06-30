@@ -4,6 +4,8 @@ import 'package:bhavya_sharma_portfolio/widgets/home_page_widget.dart';
 import 'package:bhavya_sharma_portfolio/widgets/skill_page_widget.dart';
 import 'package:bhavya_sharma_portfolio/widgets/summary_page_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -219,36 +221,51 @@ class _PortfolioHomeState extends State<PortfolioHome>
                   color: Colors.white.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(45),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _buildNavButton(
-                      Icons.person_outline,
-                      'Home',
-                      _currentPage == 0,
-                      0,
-                    ),
-                    _buildNavButton(
-                      Icons.description_outlined,
-                      'Summary',
-                      _currentPage == 1,
-                      1,
-                    ),
-                    _buildNavButton(
-                      Icons.work_outline,
-                      'Experience',
-                      _currentPage == 2,
-                      2,
-                    ),
-                    _buildNavButton(
-                      Icons.psychology_outlined,
-                      'Skills',
-                      _currentPage == 3,
-                      3,
-                    ),
-                    _buildNavButton(Icons.link, 'Hobbies', _currentPage == 4, 4),
-                  ],
+                child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        double maxWidth = constraints.maxWidth;
+                        bool isMobile = maxWidth < 600;
+                        bool isTablet = maxWidth >= 600 && maxWidth < 1024;
+                        bool isWeb = maxWidth >= 1024;
+
+                        double buttonSpacing = isMobile ? 8 : 16;
+                        double iconSize = isMobile ? 20 : 24;
+                        double fontSize = isMobile ? 10 : 14;
+
+                        return Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            _buildNavButton(
+                              Icons.person_outline,
+                              (isMobile) ? '' : 'Home',
+                              _currentPage == 0,
+                              0,
+                            ),
+                            _buildNavButton(
+                              Icons.description_outlined,
+                              (isMobile) ? '' : 'Summary',
+                              _currentPage == 1,
+                              1,
+                            ),
+                            _buildNavButton(
+                              Icons.work_outline,
+                              (isMobile) ? '' : 'Experience',
+                              _currentPage == 2,
+                              2,
+                            ),
+                            _buildNavButton(
+                              Icons.psychology_outlined,
+                              (isMobile) ? '' : 'Skills',
+                              _currentPage == 3,
+                              3,
+                            ),
+                            _buildNavButton(Icons.link,
+                                (isMobile) ? '' : 'Hobbies', _currentPage == 4,
+                                4),
+                          ],
+                        );
+                      }
                 ),
               ),
             ],
@@ -419,55 +436,4 @@ class _PortfolioHomeState extends State<PortfolioHome>
   }
 }
 
-class ContactInfo extends StatelessWidget {
-  final String email;
-  final String phone;
-  final String linkedin;
-  final String location;
 
-  const ContactInfo({
-    super.key,
-    required this.email,
-    required this.phone,
-    required this.linkedin,
-    required this.location,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            _buildContactRow(Icons.email, email),
-            const SizedBox(width: 150),
-            _buildContactRow(Icons.phone, phone),
-          ],
-        ),
-
-        const SizedBox(height: 25),
-        Row(
-          children: [
-            _buildContactRow(Icons.contact_page, linkedin),
-            const SizedBox(width: 40),
-            _buildContactRow(Icons.location_on, location),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _buildContactRow(IconData icon, String text) {
-    return Row(
-      children: [
-        Icon(icon, color: Colors.amber, size: 20),
-        const SizedBox(width: 8),
-        Text(text, style: const TextStyle(color: Colors.white70)),
-      ],
-    );
-  }
-
-
-}

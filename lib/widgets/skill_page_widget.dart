@@ -14,68 +14,79 @@ class SkillPageWidget extends StatelessWidget {
           top: 15.0,
           bottom: 32.0,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Skills & Tools',
-              style: TextStyle(
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-                color: Colors.amber,
-              ),
-            ),
-            const SizedBox(height: 48),
-            // Skills Section
-            Wrap(
-              spacing: 48,
-              runSpacing: 20,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            double maxWidth = constraints.maxWidth;
+            bool isMobile = maxWidth < 600;
+            bool isTablet = maxWidth >= 600 && maxWidth < 1024;
+            bool isWeb = maxWidth >= 1024;
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildSkillItem('Kotlin'),
-                _buildSkillItem('Java'),
-                _buildSkillItem('Flutter'),
-                _buildSkillItem('Firebase'),
-                _buildSkillItem('Dart'),
-                _buildSkillItem('MVVM (Model-View-View Model)'),
-                _buildSkillItem('Jetpack Components'),
-                _buildSkillItem('Push Notifications'),
-                _buildSkillItem('Clean Architecture'),
-                _buildSkillItem('Dependency injection (Hilt, Koin, Dagger)'),
-                _buildSkillItem('App store & Play store deployment'),
-                _buildSkillItem('Firebase Crashlytics'),
-                _buildSkillItem('GetX & Riverpod'),
-                _buildSkillItem('Go router'),
-                _buildSkillItem('ViewModel'),
-                _buildSkillItem('LiveData'),
-                _buildSkillItem('Navigation'),
-                _buildSkillItem('Room & Hive DB'),
-                _buildSkillItem('Retrofit & Dio'),
-                _buildSkillItem('GitHub'),
+                 Text(
+                  'Skills & Tools',
+                  style: TextStyle(
+                    fontSize:  isMobile ? 28 : 48,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amber,
+                  ),
+                ),
+                const SizedBox(height: 48),
+                // Skills Section
+                Wrap(
+                  spacing: 48,
+                  runSpacing: 20,
+                  children: [
+                    _buildSkillItem('Kotlin',isMobile ),
+                    _buildSkillItem('Java', isMobile),
+                    _buildSkillItem('Flutter', isMobile),
+                    _buildSkillItem('Firebase', isMobile),
+                    _buildSkillItem('Dart', isMobile),
+                    _buildSkillItem('MVVM (Model-View-View Model)', isMobile),
+                    _buildSkillItem('Jetpack Components', isMobile),
+                    _buildSkillItem('Push Notifications', isMobile),
+                    _buildSkillItem('Clean Architecture', isMobile),
+                    _buildSkillItem('Dependency injection (Hilt, Koin, Dagger)', isMobile),
+                    _buildSkillItem('App store & Play store deployment', isMobile),
+                    _buildSkillItem('Firebase Crashlytics', isMobile),
+                    _buildSkillItem('GetX & Riverpod', isMobile),
+                    _buildSkillItem('Go router', isMobile),
+                    _buildSkillItem('ViewModel', isMobile),
+                    _buildSkillItem('LiveData',isMobile),
+                    _buildSkillItem('Navigation',isMobile),
+                    _buildSkillItem('Room & Hive DB',isMobile),
+                    _buildSkillItem('Retrofit & Dio',isMobile),
+                    _buildSkillItem('GitHub',isMobile),
+                    _buildSkillItem('Stripe Payment Gateway',isMobile),
+                  ],
+                ),
+                const SizedBox(height: 64),
+                // Tools Section
+                Wrap(
+                  spacing: 32,
+                  runSpacing: 32,
+                  children: [
+                    _buildToolItem('Flutter', 'assets/flutter_logo.png'),
+                    _buildToolItem('Android Studio', 'assets/android_studio.png'),
+                    _buildToolItem('Firebase', 'assets/firebase_logo.png'),
+                    _buildToolItem('Cursor AI', 'assets/cursor_logo.png'),
+                    _buildToolItem('Figma', 'assets/figma_logo.webp'),
+                    _buildToolItem('Agora SDK', 'assets/agora_logo.webp'),
+                    _buildToolItem('Git', 'assets/github_logo.webp'),
+                    _buildToolItem('Jira', 'assets/jira_logo.png'),
+                  ],
+                ),
               ],
-            ),
-            const SizedBox(height: 64),
-            // Tools Section
-            Wrap(
-              spacing: 32,
-              runSpacing: 32,
-              children: [
-                _buildToolItem('Flutter', 'assets/flutter_logo.png'),
-                _buildToolItem('Android Studio', 'assets/android_studio.png'),
-                _buildToolItem('Firebase', 'assets/firebase_logo.png'),
-                _buildToolItem('Cursor AI', 'assets/cursor_logo.png'),
-                _buildToolItem('Figma', 'assets/figma_logo.webp'),
-                _buildToolItem('Agora SDK', 'assets/agora_logo.webp'),
-                _buildToolItem('Git', 'assets/github_logo.webp'),
-                _buildToolItem('Jira', 'assets/jira_logo.png'),
-              ],
-            ),
-          ],
+            );
+          },
+
         ),
       ),
     );
   }
 
-  Widget _buildSkillItem(String skill) {
+  Widget _buildSkillItem(String skill, bool isMobile) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -90,9 +101,9 @@ class SkillPageWidget extends StatelessWidget {
         const SizedBox(width: 12),
         Text(
           skill,
-          style: const TextStyle(
+          style:  TextStyle(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: isMobile? 16: 18,
             fontWeight: FontWeight.w500,
           ),
         ),
