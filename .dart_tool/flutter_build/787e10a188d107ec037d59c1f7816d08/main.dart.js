@@ -32499,7 +32499,7 @@ case 3:return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:0}
 A.a49.prototype={
-$2(a,b){var s,r,q,p,o=null,n=b.b<600,m=n?25:50,l=n?25:50,k=n?50:110,j=n?50:110,i=this.a,h=i.f
+$2(a,b){var s,r,q,p,o=null,n=b.b<600,m=n?25:50,l=n?25:50,k=n?80:110,j=n?80:110,i=this.a,h=i.f
 h===$&&A.a()
 s=t.D
 h=A.cb(A.c([A.cb(A.c([A.M9(h,new A.a45(i),A.dY(o,B.v,o,B.w2,8,o,o,8)),B.i8,B.Md],s),B.W,B.K),new A.As(new A.a46(this.b),o,o,o,A.ak9(o,o,B.G,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o),o,o,!1,o,!0,o,B.Mc,o)],s),B.aQ,B.K)

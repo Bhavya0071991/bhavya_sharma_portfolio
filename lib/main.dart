@@ -144,8 +144,8 @@ class _PortfolioHomeState extends State<PortfolioHome>
                     padding:  EdgeInsets.only(
                       top:isMobile?25.0: 50.0,
                       bottom: isMobile?25.0: 50.0,
-                      left: isMobile? 50: 110.0,
-                      right: isMobile? 50:110.0,
+                      left: isMobile? 80: 110.0,
+                      right: isMobile? 80:110.0,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
